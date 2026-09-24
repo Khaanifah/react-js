@@ -1,3 +1,5 @@
+import Fade from '../components/Fade'
+
 function InstagramIcon(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" {...props}>
@@ -26,13 +28,10 @@ function LinkedInIcon(props) {
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="w-full px-8 pb-24 pt-40 text-white md:px-16 md:pb-32 md:pt-48"
-    >
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
+    <Fade id="contact" className="w-full px-8 pb-24 pt-40 text-white md:px-16 md:pb-32 md:pt-48">
+      <Fade className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
         {/* Kiri: judul + ajakan */}
-        <div>
+        <Fade>
           <h2
             className="text-4xl font-bold"
             style={{ fontFamily: "'Sora', sans-serif" }}
@@ -46,11 +45,11 @@ export default function Contact() {
             Have an idea, a project, or just want to say hello? I'd love to
             hear from you.
           </p>
-        </div>
+        </Fade>
 
         {/* Kanan: Email & Socials */}
-        <div className="flex flex-col gap-10">
-          <div>
+        <Fade className="flex flex-col gap-10">
+          <Fade>
             <h3
               className="mb-1 text-lg font-bold"
               style={{ fontFamily: "'Sora', sans-serif" }}
@@ -58,15 +57,15 @@ export default function Contact() {
               Email
             </h3>
             <a
-              href="mailto:itsnaankhaanifaah@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=itsnaankhaanifaah@gmail.com&su=Halo%20Itsnan&body=Halo%2C%20saya%20tertarik%20untuk%20bekerja%20sama..."
               className="text-white/80 transition-colors hover:text-white"
               style={{ fontFamily: "'Sora', sans-serif" }}
             >
               itsnaankhaanifaah@gmail.com
             </a>
-          </div>
+          </Fade>
 
-          <div>
+          <Fade>
             <h3
               className="mb-2 text-lg font-bold"
               style={{ fontFamily: "'Sora', sans-serif" }}
@@ -74,7 +73,7 @@ export default function Contact() {
               Socials
             </h3>
 
-            <div className="flex flex-col gap-2">
+            <Fade className="flex flex-col gap-2">
               <a
                 href="https://instagram.com/khaanfhn"
                 target="_blank"
@@ -96,10 +95,10 @@ export default function Contact() {
                 <LinkedInIcon className="h-4 w-4" />
                 Itsnan Nur Khanifah
               </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+            </Fade>
+          </Fade>
+        </Fade>
+      </Fade>
+    </Fade>
   )
 }

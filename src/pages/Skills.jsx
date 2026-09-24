@@ -2,6 +2,7 @@ import figmaLogo from '../assets/figma.png'
 import canvaLogo from '../assets/canva.png'
 import vscodeLogo from '../assets/vscode.png'
 import githubLogo from '../assets/github.png'
+import Fade from '../components/Fade'
 
 const skillGroups = [
   {
@@ -29,50 +30,51 @@ const skillGroups = [
 
 export default function Skills() {
   return (
-    <section
-      id="skills"
-      className="w-full px-8 pb-24 pt-40 text-white md:px-16 md:pb-32 md:pt-48"
-    >
-      <h2
-        className="text-5xl font-bold"
-        style={{ fontFamily: "'Sora', sans-serif" }}
-      >
-        Skills
-      </h2>
+    <Fade id="skills" className="w-full px-8 pb-24 pt-40 text-white md:px-16 md:pb-32 md:pt-48">
+      <Fade>
+        <h2
+          className="text-5xl font-bold"
+          style={{ fontFamily: "'Sora', sans-serif" }}
+        >
+          Skills
+        </h2>
+      </Fade>
 
       <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-16">
-        {skillGroups.map((group) => (
-          <div key={group.title}>
-            <h3
-              className="mb-3 text-xl font-bold tracking-wider"
-              style={{ fontFamily: "'Sora', sans-serif" }}
-            >
-              {group.title}
-            </h3>
+        {skillGroups.map((group, index) => (
+          <Fade key={group.title} delay={index * 0.15}>
+            <div>
+              <h3
+                className="mb-3 text-xl font-bold tracking-wider"
+                style={{ fontFamily: "'Sora', sans-serif" }}
+              >
+                {group.title}
+              </h3>
 
-            <p
-              className="text-justify text-[15px] font-light leading-relaxed text-white/80"
-              style={{ fontFamily: "'Sora', sans-serif" }}
-            >
-              {group.description}
-            </p>
+              <p
+                className="text-justify text-[15px] font-light leading-relaxed text-white/80"
+                style={{ fontFamily: "'Sora', sans-serif" }}
+              >
+                {group.description}
+              </p>
 
-            <div className="mt-10 flex flex-col gap-4">
-              {group.tools.map(({ name, image }) => (
-                <div key={name} className="flex items-center gap-3">
-                  <img src={image} alt={name} className="h-6 w-6 object-contain" />
-                  <span
-                    className="text-lg font-semibold tracking-wide"
-                    style={{ fontFamily: "'Sora', sans-serif" }}
-                  >
-                    {name}
-                  </span>
-                </div>
-              ))}
+              <div className="mt-10 flex flex-col gap-4">
+                {group.tools.map(({ name, image }) => (
+                  <div key={name} className="flex items-center gap-3">
+                    <img src={image} alt={name} className="h-6 w-6 object-contain" />
+                    <span
+                      className="text-lg font-semibold tracking-wide"
+                      style={{ fontFamily: "'Sora', sans-serif" }}
+                    >
+                      {name}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </Fade>
         ))}
       </div>
-    </section>
+    </Fade>
   )
 }

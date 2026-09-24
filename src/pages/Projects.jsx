@@ -3,6 +3,7 @@ import buletinHima from '../assets/bulletin.png'
 import kosId from '../assets/kos-id.png'
 import portalMaba from '../assets/sistempmb.png'
 import dssRankdept from '../assets/rankdept.png'
+import Fade from '../components/Fade'
 
 const projects = [
   {
@@ -44,20 +45,16 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="w-full px-8 pb-24 pt-40 text-white md:px-16 md:pb-32 md:pt-48"
-    >
-      <h2
-        className="mb-12 text-4xl font-bold"
-        style={{ fontFamily: "'Sora', sans-serif" }}
-      >
-        Selected Projects
-      </h2>
+    <Fade id="projects" className="w-full px-8 pb-24 pt-40 text-white md:px-16 md:pb-32 md:pt-48">
+      <Fade>
+        <h2 className="mb-12 text-4xl font-bold" style={{ fontFamily: "'Sora', sans-serif" }}>
+          Selected Projects
+        </h2>
+      </Fade>
 
       <div className="flex flex-col">
         {projects.map((project, index) => (
-          <div key={project.title}>
+          <Fade key={project.title}>
             <div className="flex flex-col gap-6 py-8 md:flex-row md:items-start md:gap-10">
               {/* Thumbnail */}
               <img
@@ -96,10 +93,10 @@ export default function Projects() {
             {index < projects.length - 1 && (
               <div className="h-px w-full bg-white/15" />
             )}
-          </div>
+          </Fade>
         ))}
       </div>
-    </section>
+    </Fade>
   )
 }
 

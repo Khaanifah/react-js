@@ -1,16 +1,20 @@
 import photo from '../assets/pasphoto.jpg'
+import Fade from '../components/Fade'
 
 export default function Home() {
   return (
-      <section id="main" className="relative min-h-screen w-full overflow-hidden text-white">
+      <Fade id="main" className="relative min-h-screen w-full overflow-hidden text-white">
 
         {/* Hero content */}
-        <div className="relative z-10 flex min-h-[150vh] items-start px-8 pt-40 md:px-70 md:pt-50">
-          <div className="max-w-xl">
-            <p className="mb-1 text-lg font-light text-white/90" style={{ fontFamily: "'Sora', sans-serif" }}>
-              Bits and Pieces of my
-            </p>
+        <Fade className="relative z-10 flex min-h-[150vh] items-start px-8 pt-40 md:px-70 md:pt-50">
+          <Fade className="max-w-xl">
+            <Fade>
+              <p className="mb-1 text-lg font-light text-white/90" style={{ fontFamily: "'Sora', sans-serif" }}>
+                Bits and Pieces of my
+              </p>
+            </Fade>
 
+            <Fade>
             <h1 className="-mt-2 flex flex-nowrap items-end">
               <span className="text-[300px] leading-none text-white" style={{ fontFamily: "'Pinyon Script', cursive", marginRight: "-0.5rem", marginBottom: "-5rem" }}>
                 P
@@ -19,34 +23,39 @@ export default function Home() {
                 roject
               </span>
             </h1>
+            </Fade>
 
+            <Fade></Fade>
             <p className="mt-2 flex flex-nowrap text-base font-light text-white/85" style={{ fontFamily: "'Sora', sans-serif", marginLeft: "10rem" }}>
               [ as Computer Science Student ]
             </p>
-          </div>
+            </Fade>
+          </Fade>
+
+          <Fade>
           <p className="absolute top-70 right-50 animate-bounce text-base font-light text-white/85" style={{ fontFamily: "'Sora', sans-serif", marginLeft: "35rem", marginTop: "30rem" }}>
               Get to know me↓
             </p>
-        </div>
+        </Fade>
 
         {/* ===== About content — tetap di atas background hijau yang sama ===== */}
-        <div className="relative z-10 flex flex-col items-center gap-12 px-8 pb-24 pt-8 md:flex-row md:items-center md:gap-16 md:px-16">
+        <Fade className="relative z-10 flex flex-col items-center gap-12 px-8 pb-24 pt-8 md:flex-row md:items-center md:gap-16 md:px-16">
           {/* Tumpukan foto ala polaroid */}
-          <div className="relative h-[400px] w-full max-w-[300px] shrink-0 translate-x-60 -translate-y-40">
-            <div className="absolute inset-0 rounded-xl border-4 border-white bg-white p-1 shadow-xl">
-              <img
-                src={photo}
-                alt="Foto profil"
-                className="h-full w-full rounded-md object-cover"
-              />
-            </div>
-          </div>
+          <Fade className="relative h-[400px] w-full max-w-[300px] shrink-0 translate-x-60 -translate-y-40">
+            <Fade className="absolute inset-0 rounded-xl border-4 border-white bg-white p-1 shadow-xl">
+              <Fade>
+                <img src={photo} alt="Foto profil" className="h-full w-full rounded-md object-cover"/>
+              </Fade>
+            </Fade>
+          </Fade>
 
           {/* Teks bio */}
-          <div className="flex-1 translate-x-60 -translate-y-45">
+          <Fade className="flex-1 translate-x-60 -translate-y-45">
+            <Fade>
             <p className="mb-4 text-3xl font-regular text-white/90" style={{ fontFamily: "'Sora', sans-serif" }}>
               [ About <span className="font-bold">Me</span> ]
             </p>
+            </Fade>
 
             <p className="max-w-3xl text-justify text-[20px] font-regular leading-relaxed text-white/80" style={{ fontFamily: "'Sora', sans-serif" }}>
               I'm <span className="font-semibold text-[20px] text-white tracking-widest">Itsnan Nur Khanifah</span>, a
@@ -69,8 +78,8 @@ export default function Home() {
             >
               Hire me!
             </a>
-          </div>
-        </div>
-      </section>
+          </Fade>
+        </Fade>
+      </Fade>
   );
 }
